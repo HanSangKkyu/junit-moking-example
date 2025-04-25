@@ -21,7 +21,29 @@ class DserviceTest {
     @Test
     void doSomething() {
         // interface를 return하는 메서드 mocking 하는 법
-//        when(eservice.getInterface().getMethod1()).thenReturn(6); // NPE 발생 eservice.getInterface() 에 대해 먼저 mocking을 해주어야 한다.
+
+        // 내부 함수를 모두 구현해야 하기 때문에 너무 코드가 길어진다.
+//        when(eservice.getInterface()).thenReturn(new Einterface() {
+//            @Override
+//            public int getMethod1() {
+//                return 6;
+//            }
+//
+//            @Override
+//            public int getMethod2() {
+//                return 0;
+//            }
+//
+//            @Override
+//            public int getMethod3() {
+//                return 0;
+//            }
+//
+//            @Override
+//            public int getMethod4() {
+//                return 0;
+//            }
+//        });
 
         Einterface einterface = mock(Einterface.class);
         when(einterface.getMethod1()).thenReturn(6);
